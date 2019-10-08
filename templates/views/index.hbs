@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WeatherApp</title>
+        <link rel="icon" href="./img/Anyweather_logo_big.JPG">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+
+    <body>
+        <div class="main">
+            {{>header}}
+            <p>Use this site to get your weather</p>
+
+            <form>
+                <input type="text" placeholder="Location" id="search">
+                {{!-- first approach --}}
+                {{!-- <button type="button" onclick="onSearch()">Search</button> --}}
+                <button type="submit">Search</button>
+            </form>
+
+            <p id="msgOne"></p>
+            <p id="msgTwo"></p>
+
+        </div> 
+        {{>footer}}
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>
