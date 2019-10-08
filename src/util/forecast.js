@@ -13,10 +13,12 @@ let forecast = (latitude, longitude, callback) => {
             callback(response.body.error,  undefined)
         } else {
             // Object destructuring
-            let {summary, temperature, precipProbability} = response.body.currently;
+            let {temperature, precipProbability} = response.body.currently;
+            let {summary, data} = response.body.daily;
 
-            let string = `${summary}. It is currently ${temperature} degrees out there. There is a ${
-                precipProbability * 100} % chance of rain.`;
+            let string = `${summary} It is currently ${temperature} degrees out there. Today's high is ${
+                data[0].temperatureHigh} and low of ${data[0].temperatureLow}.
+                There is a ${precipProbability * 100} % chance of rain.`;
 
             callback(undefined, string);
         }
